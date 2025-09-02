@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level-up Gamer - Registro de Usuario</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Estilos específicos para el formulario de registro */
+        .registro-container {
+            background: var(--card-bg);
+            border: 2px solid var(--dark-gray);
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 600px;
+            margin: 50px auto;
+            box-shadow: 0 15px 35px rgba(30, 144, 255, 0.1);
+        }
+        
+        .registro-title {
+            background: linear-gradient(45deg, var(--electric-blue), var(--neon-green));
+            color: var(--primary-bg);
+            text-align: center;
+            padding: 15px;
+            margin: -40px -40px 30px -40px;
+            border-radius: 13px 13px 0 0;
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            color: var(--electric-blue);
+            font-family: 'Orbitron', monospace;
+            font-weight: 500;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .form-control {
+            background-color: var(--primary-bg);
+            border: 2px solid var(--dark-gray);
+            color: var(--white-text);
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            background-color: var(--primary-bg);
+            border-color: var(--electric-blue);
+            color: var(--white-text);
+            box-shadow: 0 0 15px rgba(30, 144, 255, 0.3);
+        }
+        
+        .form-control::placeholder {
+            color: var(--light-gray);
+        }
+        
+        .form-select {
+            background-color: var(--primary-bg);
+            border: 2px solid var(--dark-gray);
+            color: var(--white-text);
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+        }
+        
+        .form-select:focus {
+            background-color: var(--primary-bg);
+            border-color: var(--electric-blue);
+            color: var(--white-text);
+            box-shadow: 0 0 15px rgba(30, 144, 255, 0.3);
+        }
+        
+        .form-select option {
+            background-color: var(--primary-bg);
+            color: var(--white-text);
+        }
+        
+        .btn-registrar {
+            background: linear-gradient(45deg, var(--electric-blue), var(--neon-green));
+            border: none;
+            color: var(--primary-bg);
+            font-weight: 700;
+            font-family: 'Orbitron', monospace;
+            padding: 15px 40px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 40px auto 0;
+        }
+        
+        .btn-registrar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(30, 144, 255, 0.4);
+            color: var(--primary-bg);
+        }
+        
+        .row.form-row {
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+        
+        .row.form-row .col-md-6 {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        
+        /* Override para mantener el tema oscuro en esta página */
+        body {
+            background-color: var(--primary-bg) !important;
+            color: var(--white-text) !important;
+        }
+        
+        .navbar {
+            background-color: var(--primary-bg) !important;
+        }
+        
+        .navbar .nav-link {
+            color: var(--white-text) !important;
+        }
+        
+        .navbar-brand {
+            color: var(--white-text) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i><img src="img/logo.png" width="100" height="100"></i>
+            </a>
+            
+            <div class="navbar-nav me-auto">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="#">Productos</a>
+                <a class="nav-link" href="#">Nosotros</a>
+                <a class="nav-link" href="#">Blogs</a>
+                <a class="nav-link" href="#">Contacto</a>
+            </div>
+            
+            <div class="d-flex align-items-center">
+                <a href="#" class="btn btn-outline-dark me-2">Iniciar sesión</a>
+                <a href="registro.html" class="btn btn-outline-dark me-2">Registrar usuario</a>
+                <a href="#" class="btn btn-outline-dark">
+                    <i class="fas fa-shopping-cart me-1"></i> Carrito (0)
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Formulario de Registro -->
+    <div class="container">
+        <div class="registro-container">
+            <div class="registro-title">
+                Registro de usuario
+            </div>
+            
+            <form>
+                <!-- Nombre Completo -->
+                <div class="form-group">
+                    <label class="form-label">Nombre Completo</label>
+                    <input type="text" class="form-control" name="nombre_completo" required>
+                </div>
+                
+                <!-- Email -->
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email" required>
+                </div>
+                
+                <!-- Correo (duplicado como en el mockup) -->
+                <div class="form-group">
+                    <label class="form-label">Correo</label>
+                    <input type="email" class="form-control" name="correo" required>
+                </div>
+                
+                <!-- Contraseña -->
+                <div class="form-group">
+                    <label class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" name="contrasena" required>
+                </div>
+                
+                <!-- Confirmar Contraseña -->
+                <div class="form-group">
+                    <label class="form-label">Confirmar Contraseña</label>
+                    <input type="password" class="form-control" name="confirmar_contrasena" required>
+                </div>
+                
+                <!-- Teléfono -->
+                <div class="form-group">
+                    <label class="form-label">Teléfono (opcional)</label>
+                    <input type="tel" class="form-control" name="telefono" placeholder="+56 9 XXXX XXXX">
+                </div>
+                
+                <!-- Selectores de País y Ciudad -->
+                <div class="row form-row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label">Seleccione su país:</label>
+                            <select class="form-select" name="pais" required>
+                                <option value="">Seleccionar país</option>
+                                <option value="argentina">Argentina</option>
+                                <option value="bolivia">Bolivia</option>
+                                <option value="brasil">Brasil</option>
+                                <option value="chile" selected>Chile</option>
+                                <option value="colombia">Colombia</option>
+                                <option value="ecuador">Ecuador</option>
+                                <option value="paraguay">Paraguay</option>
+                                <option value="peru">Perú</option>
+                                <option value="uruguay">Uruguay</option>
+                                <option value="venezuela">Venezuela</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label">Seleccione su ciudad:</label>
+                            <select class="form-select" name="ciudad" required>
+                                <option value="">Seleccionar ciudad</option>
+                                <option value="santiago">Santiago</option>
+                                <option value="valparaiso">Valparaíso</option>
+                                <option value="concepcion">Concepción</option>
+                                <option value="antofagasta">Antofagasta</option>
+                                <option value="temuco">Temuco</option>
+                                <option value="iquique">Iquique</option>
+                                <option value="rancagua">Rancagua</option>
+                                <option value="talca">Talca</option>
+                                <option value="puerto_montt">Puerto Montt</option>
+                                <option value="punta_arenas">Punta Arenas</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Botón de registro -->
+                <button type="submit" class="btn btn-registrar">
+                    <i class="fas fa-user-plus me-2"></i>Registrarse
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                        <span class="me-3">Level-up Gamer</span>
+                        <a href="#" class="text-decoration-none me-3">Category X</a>
+                        <span class="me-2">|</span>
+                        <a href="#" class="text-decoration-none me-3">Category Y</a>
+                        <span class="me-2">|</span>
+                        <a href="#" class="text-decoration-none">Category Z</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center justify-content-md-end">
+                        <span class="me-3">Suscríbete para recibir ofertas:</span>
+                        <div class="input-group" style="max-width: 300px;">
+                            <input type="email" class="form-control" placeholder="ejemplo@correo.com">
+                            <button class="btn btn-dark" type="button">Suscribir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">&copy; 2025 Level-up Gamer. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="js/func.js"></script>
+</body>
+</html>
