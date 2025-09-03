@@ -158,9 +158,8 @@ h6,
 .footer {
     background: linear-gradient(135deg, var(--primary-bg) 0%, var(--dark-gray) 100%);
     border-top: 3px solid var(--electric-blue);
-    margin-top: 0;
     padding: 2rem 0;
-    margin-top: 4rem;
+    margin-top: 0;
 }
 
 .social-icons a {
