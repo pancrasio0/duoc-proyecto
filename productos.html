@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Level-up Gamer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i><img src="img/logo.png" width="100" height="100"></i>
+            </a>
+            
+            <div class="navbar-nav me-auto">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link active" href="productos.html">Productos</a>
+                <a class="nav-link" href="#">Nosotros</a>
+                <a class="nav-link" href="#">Blogs</a>
+                <a class="nav-link" href="#">Contacto</a>
+            </div>
+            
+            <div class="d-flex align-items-center">
+                <a href="login.html" class="btn btn-outline-dark me-2">Iniciar sesión</a>
+                <a href="registro.html" class="btn btn-outline-dark me-2">Registrar usuario</a>
+                <a href="carrito.html" class="btn btn-outline-dark">
+                    <i class="fas fa-shopping-cart me-1"></i> Carrito (<span id="carritoCount">0</span>)
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="display-4 fw-bold mb-4">Nuestros Productos</h1>
+                    <p class="lead mb-4">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pharetra, ex et congue rutrum, nisl ante interdum mauris, ut viverra mi nisi sed ex.
+                    </p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="img/logo.png" width="200" height="200" alt="Level-up Gamer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtros y Productos -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Filtros -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+                        <h2 class="mb-0">Catálogo de Productos</h2>
+                        <div class="d-flex flex-wrap gap-3">
+                            <div class="filter-group">
+                                <label for="categoriaFilter" class="form-label text-light mb-2">Filtrar por categoría:</label>
+                                <select id="categoriaFilter" class="form-select" style="min-width: 200px;">
+                                    <option value="">Todas las categorías</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="ordenFilter" class="form-label text-light mb-2">Ordenar por:</label>
+                                <select id="ordenFilter" class="form-select" style="min-width: 150px;">
+                                    <option value="nombre">Nombre</option>
+                                    <option value="precio-asc">Precio: Menor a Mayor</option>
+                                    <option value="precio-desc">Precio: Mayor a Menor</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contador de productos -->
+                    <div class="mb-3">
+                        <span class="text-light">Mostrando <span id="productosCount">0</span> productos</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid de Productos -->
+            <div class="row" id="productosGrid">
+                <!-- Los productos se cargarán dinámicamente aquí -->
+            </div>
+
+            <!-- Mensaje cuando no hay productos -->
+            <div id="noProductos" class="text-center py-5" style="display: none;">
+                <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                <h4 class="text-light">No se encontraron productos</h4>
+                <p class="text-muted">Intenta ajustar los filtros para ver más productos.</p>
+                <button class="btn btn-outline-primary" onclick="limpiarFiltros()">
+                    <i class="fas fa-refresh me-2"></i>Limpiar filtros
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                        <span class="me-3">Level-up Gamer</span>
+                        <a href="#" class="text-decoration-none me-3">Juegos de Mesa</a>
+                        <span class="me-2">|</span>
+                        <a href="#" class="text-decoration-none me-3">Accesorios</a>
+                        <span class="me-2">|</span>
+                        <a href="#" class="text-decoration-none">Consolas</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center justify-content-md-end">
+                        <span class="me-3">Suscríbete para recibir ofertas:</span>
+                        <div class="input-group" style="max-width: 300px;">
+                            <input type="email" class="form-control" placeholder="ejemplo@correo.com">
+                            <button class="btn btn-dark" type="button">Suscribir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">&copy; 2025 Level-up Gamer. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="js/producto.js"></script>
+    <script src="js/func.js"></script>
+    <script src="js/funcProducto.js"></script>
+</body>
+</html>

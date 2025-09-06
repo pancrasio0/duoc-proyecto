@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - Level-up Gamer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i><img src="img/logo.png" width="100" height="100"></i>
+            </a>
+            
+            <div class="navbar-nav me-auto">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="#">Productos</a>
+                <a class="nav-link" href="#">Nosotros</a>
+                <a class="nav-link" href="#">Blogs</a>
+                <a class="nav-link" href="#">Contacto</a>
+            </div>
+            
+            <div class="d-flex align-items-center">
+                <a href="perfil.html" class="btn btn-outline-dark me-2">
+                    <i class="fas fa-user me-1"></i> Mi Perfil
+                </a>
+                <a href="#" class="btn btn-outline-dark me-2">
+                    <i class="fas fa-shopping-cart me-1"></i> Carrito (0)
+                </a>
+                <a href="login.html" class="btn btn-outline-dark">
+                    <i class="fas fa-sign-out-alt me-1"></i> Cerrar Sesión
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="row">
+            <!-- Sidebar de navegación del perfil -->
+            <div class="col-lg-3 mb-4">
+                <div class="profile-sidebar">
+                    <div class="profile-avatar text-center mb-4">
+                        <div class="avatar-container">
+                            <img src="img/logo.png" alt="Avatar" class="avatar-img">
+                            <button class="btn-edit-avatar" data-bs-toggle="modal" data-bs-target="#avatarModal">
+                                <i class="fas fa-camera"></i>
+                            </button>
+                        </div>
+                        <h5 class="mt-3 mb-1">Usuario Gamer</h5>
+                        <p class="text-muted">usuario@ejemplo.com</p>
+                        <span class="badge bg-success">Usuario Activo</span>
+                    </div>
+                    
+                    <nav class="profile-nav">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#datos-personales" data-section="datos-personales">
+                                    <i class="fas fa-user me-2"></i> Datos Personales
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#configuracion" data-section="configuracion">
+                                    <i class="fas fa-cog me-2"></i> Configuración
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#seguridad" data-section="seguridad">
+                                    <i class="fas fa-shield-alt me-2"></i> Seguridad
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#preferencias" data-section="preferencias">
+                                    <i class="fas fa-heart me-2"></i> Preferencias
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#historial" data-section="historial">
+                                    <i class="fas fa-history me-2"></i> Historial
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Contenido principal del perfil -->
+            <div class="col-lg-9">
+                <!-- Sección de Datos Personales -->
+                <div id="datos-personales" class="profile-section active">
+                    <div class="profile-container">
+                        <div class="profile-title">
+                            <h2><i class="fas fa-user me-2"></i>Datos Personales</h2>
+                            <p>Gestiona tu información personal y de contacto</p>
+                        </div>
+
+                        <form id="datosPersonalesForm" class="profile-form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="nombre" class="form-label">Nombre Completo</label>
+                                        <input type="text" class="form-control" id="nombre" name="nombre" value="Usuario Gamer" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Correo Electrónico</label>
+                                        <input type="email" class="form-control" id="email" name="email" value="usuario@ejemplo.com" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="telefono" class="form-label">Teléfono</label>
+                                        <input type="tel" class="form-control" id="telefono" name="telefono" value="+56 9 1234 5678">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento</label>
+                                        <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" value="1990-01-15">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="pais" class="form-label">País</label>
+                                        <select class="form-select" id="pais" name="pais" required>
+                                            <option value="">Seleccionar país</option>
+                                            <option value="chile" selected>Chile</option>
+                                            <option value="argentina">Argentina</option>
+                                            <option value="peru">Perú</option>
+                                            <option value="colombia">Colombia</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="ciudad" class="form-label">Ciudad</label>
+                                        <select class="form-select" id="ciudad" name="ciudad" required>
+                                            <option value="">Seleccionar ciudad</option>
+                                            <option value="santiago" selected>Santiago</option>
+                                            <option value="valparaiso">Valparaíso</option>
+                                            <option value="concepcion">Concepción</option>
+                                            <option value="la-serena">La Serena</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="direccion" class="form-label">Dirección</label>
+                                <textarea class="form-control" id="direccion" name="direccion" rows="3" placeholder="Ingresa tu dirección completa">Av. Principal 123, Santiago</textarea>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save me-2"></i>Guardar Cambios
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary">
+                                    <i class="fas fa-undo me-2"></i>Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Sección de Configuración -->
+                <div id="configuracion" class="profile-section">
+                    <div class="profile-container">
+                        <div class="profile-title">
+                            <h2><i class="fas fa-cog me-2"></i>Configuración de Cuenta</h2>
+                            <p>Personaliza tu experiencia en la plataforma</p>
+                        </div>
+
+                        <form id="configuracionForm" class="profile-form">
+                            <div class="form-group">
+                                <label class="form-label">Notificaciones</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="notif_email" checked>
+                                    <label class="form-check-label" for="notif_email">
+                                        Recibir notificaciones por email
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="notif_ofertas" checked>
+                                    <label class="form-check-label" for="notif_ofertas">
+                                        Notificaciones de ofertas especiales
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="notif_productos">
+                                    <label class="form-check-label" for="notif_productos">
+                                        Nuevos productos disponibles
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="idioma" class="form-label">Idioma Preferido</label>
+                                <select class="form-select" id="idioma" name="idioma">
+                                    <option value="es" selected>Español</option>
+                                    <option value="en">English</option>
+                                    <option value="pt">Português</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tema" class="form-label">Tema de la Aplicación</label>
+                                <select class="form-select" id="tema" name="tema">
+                                    <option value="dark" selected>Oscuro (Gaming)</option>
+                                    <option value="light">Claro</option>
+                                    <option value="auto">Automático</option>
+                                </select>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save me-2"></i>Guardar Configuración
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Sección de Seguridad -->
+                <div id="seguridad" class="profile-section">
+                    <div class="profile-container">
+                        <div class="profile-title">
+                            <h2><i class="fas fa-shield-alt me-2"></i>Seguridad de la Cuenta</h2>
+                            <p>Gestiona la seguridad de tu cuenta y contraseñas</p>
+                        </div>
+
+                        <form id="seguridadForm" class="profile-form">
+                            <div class="form-group">
+                                <label for="contrasena_actual" class="form-label">Contraseña Actual</label>
+                                <input type="password" class="form-control" id="contrasena_actual" name="contrasena_actual" required>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="nueva_contrasena" class="form-label">Nueva Contraseña</label>
+                                        <input type="password" class="form-control" id="nueva_contrasena" name="nueva_contrasena" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="confirmar_contrasena" class="form-label">Confirmar Nueva Contraseña</label>
+                                        <input type="password" class="form-control" id="confirmar_contrasena" name="confirmar_contrasena" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Autenticación de Dos Factores</label>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6 class="mb-1">2FA Desactivado</h6>
+                                        <p class="text-muted mb-0">Añade una capa extra de seguridad a tu cuenta</p>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-primary">
+                                        <i class="fas fa-mobile-alt me-2"></i>Activar 2FA
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-lock me-2"></i>Actualizar Contraseña
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Sección de Preferencias -->
+                <div id="preferencias" class="profile-section">
+                    <div class="profile-container">
+                        <div class="profile-title">
+                            <h2><i class="fas fa-heart me-2"></i>Preferencias de Gaming</h2>
+                            <p>Personaliza tu experiencia gaming</p>
+                        </div>
+
+                        <form id="preferenciasForm" class="profile-form">
+                            <div class="form-group">
+                                <label class="form-label">Plataformas de Juego Preferidas</label>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="pc" checked>
+                                            <label class="form-check-label" for="pc">
+                                                <i class="fas fa-desktop me-2"></i>PC Gaming
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="playstation" checked>
+                                            <label class="form-check-label" for="playstation">
+                                                <i class="fab fa-playstation me-2"></i>PlayStation
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="xbox">
+                                            <label class="form-check-label" for="xbox">
+                                                <i class="fab fa-xbox me-2"></i>Xbox
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="genero_preferido" class="form-label">Género de Juegos Preferido</label>
+                                <select class="form-select" id="genero_preferido" name="genero_preferido">
+                                    <option value="accion" selected>Acción</option>
+                                    <option value="aventura">Aventura</option>
+                                    <option value="estrategia">Estrategia</option>
+                                    <option value="rpg">RPG</option>
+                                    <option value="deportes">Deportes</option>
+                                    <option value="carreras">Carreras</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="presupuesto_mensual" class="form-label">Presupuesto Mensual para Gaming</label>
+                                <select class="form-select" id="presupuesto_mensual" name="presupuesto_mensual">
+                                    <option value="0-50000">$0 - $50.000</option>
+                                    <option value="50000-100000" selected>$50.000 - $100.000</option>
+                                    <option value="100000-200000">$100.000 - $200.000</option>
+                                    <option value="200000+">Más de $200.000</option>
+                                </select>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save me-2"></i>Guardar Preferencias
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Sección de Historial -->
+                <div id="historial" class="profile-section">
+                    <div class="profile-container">
+                        <div class="profile-title">
+                            <h2><i class="fas fa-history me-2"></i>Historial de Actividad</h2>
+                            <p>Revisa tu actividad reciente en la plataforma</p>
+                        </div>
+
+                        <div class="activity-timeline">
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h6>Compra realizada</h6>
+                                    <p class="text-muted">Mouse Gamer Logitech G502 HERO - $49.990</p>
+                                    <small class="text-muted">Hace 2 días</small>
+                                </div>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-user-edit"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h6>Perfil actualizado</h6>
+                                    <p class="text-muted">Se actualizó la información personal</p>
+                                    <small class="text-muted">Hace 1 semana</small>
+                                </div>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h6>Producto agregado a favoritos</h6>
+                                    <p class="text-muted">PlayStation 5</p>
+                                    <small class="text-muted">Hace 2 semanas</small>
+                                </div>
+                            </div>
+
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h6>Reseña publicada</h6>
+                                    <p class="text-muted">Calificación: 5 estrellas para Catan</p>
+                                    <small class="text-muted">Hace 3 semanas</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para cambiar avatar -->
+    <div class="modal fade" id="avatarModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cambiar Avatar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <div class="avatar-preview mb-3">
+                            <img src="img/logo.png" alt="Avatar Preview" class="avatar-img">
+                        </div>
+                        <input type="file" class="form-control" id="avatarFile" accept="image/*">
+                        <p class="text-muted mt-2">Formatos soportados: JPG, PNG, GIF (máx. 2MB)</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Guardar Avatar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">&copy; 2025 Level-up Gamer. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="js/func.js"></script>
+</body>
+</html>
