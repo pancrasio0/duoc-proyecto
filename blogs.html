@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs - Level-up Gamer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i><img src="img/logo.png" width="100" height="100"></i>
+            </a>
+            
+            <div class="navbar-nav me-auto">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="productos.html">Productos</a>
+                <a class="nav-link" href="nosotros.html">Nosotros</a>
+                <a class="nav-link active" href="blogs.html">Blogs</a>
+                <a class="nav-link" href="#">Contacto</a>
+            </div>
+            
+            <div class="d-flex align-items-center">
+                <a href="login.html" class="btn btn-outline-dark me-2">Iniciar sesión</a>
+                <a href="registro.html" class="btn btn-outline-dark me-2">Registrar usuario</a>
+                <a href="carrito.html" class="btn btn-outline-dark">
+                    <i class="fas fa-shopping-cart me-1"></i> Carrito (<span id="carritoCount">0</span>)
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section para Blogs -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="display-4 fw-bold mb-4">
+                        <i class="fas fa-blog me-3" style="color: var(--electric-blue);"></i>Blog Gaming
+                    </h1>
+                    <p class="lead mb-4">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed neque ac ex tincidunt eleifend nec nec ipsum. Duis pretium est quis lacus consectetur lobortis quis non mi.
+                    </p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-newspaper fa-5x" style="color: var(--electric-blue); opacity: 0.3;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Blogs -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Filtros de categorías -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <button class="btn btn-outline-primary active" data-category="all">
+                            <i class="fas fa-th-large me-2"></i>Todos
+                        </button>
+                        <button class="btn btn-outline-primary" data-category="gaming">
+                            <i class="fas fa-gamepad me-2"></i>Gaming
+                        </button>
+                        <button class="btn btn-outline-primary" data-category="reviews">
+                            <i class="fas fa-star me-2"></i>Reviews
+                        </button>
+                        <button class="btn btn-outline-primary" data-category="tech">
+                            <i class="fas fa-microchip me-2"></i>Tecnología
+                        </button>
+                        <button class="btn btn-outline-primary" data-category="news">
+                            <i class="fas fa-newspaper me-2"></i>Noticias
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid de Blogs -->
+            <div class="row" id="blogsContainer">
+                <!-- Blog 1 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-category="gaming">
+                    <div class="blog-card">
+                        <div class="blog-image-container">
+                            <img src="img/ps5.png" alt="Blog Gaming" class="blog-image">
+                            <div class="blog-category">Gaming</div>
+                            <div class="blog-date">
+                                <i class="fas fa-calendar me-1"></i>15 Ene 2025
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <h5 class="blog-title">Lorem Ipsum Gaming: La Evolución del Entretenimiento Digital</h5>
+                            <p class="blog-excerpt">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+                            </p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <i class="fas fa-user me-1"></i>Admin
+                                </div>
+                                <div class="blog-read-time">
+                                    <i class="fas fa-clock me-1"></i>5 min
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog 2 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-category="reviews">
+                    <div class="blog-card">
+                        <div class="blog-image-container">
+                            <img src="img/g502.png" alt="Review Mouse" class="blog-image">
+                            <div class="blog-category">Reviews</div>
+                            <div class="blog-date">
+                                <i class="fas fa-calendar me-1"></i>12 Ene 2025
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <h5 class="blog-title">Review Completo: Lorem Ipsum Mouse Gaming Pro</h5>
+                            <p class="blog-excerpt">
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+                            </p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <i class="fas fa-user me-1"></i>TechReview
+                                </div>
+                                <div class="blog-read-time">
+                                    <i class="fas fa-clock me-1"></i>8 min
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog 3 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-category="tech">
+                    <div class="blog-card">
+                        <div class="blog-image-container">
+                            <img src="img/notebook.png" alt="Tecnología" class="blog-image">
+                            <div class="blog-category">Tecnología</div>
+                            <div class="blog-date">
+                                <i class="fas fa-calendar me-1"></i>10 Ene 2025
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <h5 class="blog-title">Lorem Ipsum Tech: El Futuro de los Componentes Gaming</h5>
+                            <p class="blog-excerpt">
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.
+                            </p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <i class="fas fa-user me-1"></i>TechGuru
+                                </div>
+                                <div class="blog-read-time">
+                                    <i class="fas fa-clock me-1"></i>6 min
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog 4 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-category="news">
+                    <div class="blog-card">
+                        <div class="blog-image-container">
+                            <img src="img/hyperxcloud2.png" alt="Noticias Gaming" class="blog-image">
+                            <div class="blog-category">Noticias</div>
+                            <div class="blog-date">
+                                <i class="fas fa-calendar me-1"></i>8 Ene 2025
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <h5 class="blog-title">Lorem Ipsum News: Últimas Tendencias en Gaming 2025</h5>
+                            <p class="blog-excerpt">
+                                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias.
+                            </p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <i class="fas fa-user me-1"></i>NewsEditor
+                                </div>
+                                <div class="blog-read-time">
+                                    <i class="fas fa-clock me-1"></i>4 min
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog 5 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-category="gaming">
+                    <div class="blog-card">
+                        <div class="blog-image-container">
+                            <img src="img/catan.png" alt="Juegos de Mesa" class="blog-image">
+                            <div class="blog-category">Gaming</div>
+                            <div class="blog-date">
+                                <i class="fas fa-calendar me-1"></i>5 Ene 2025
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <h5 class="blog-title">Lorem Ipsum Board Games: El Renacimiento de los Juegos de Mesa</h5>
+                            <p class="blog-excerpt">
+                                Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
+                            </p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <i class="fas fa-user me-1"></i>BoardGamer
+                                </div>
+                                <div class="blog-read-time">
+                                    <i class="fas fa-clock me-1"></i>7 min
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog 6 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-category="reviews">
+                    <div class="blog-card">
+                        <div class="blog-image-container">
+                            <img src="img/joystick.png" alt="Review Controlador" class="blog-image">
+                            <div class="blog-category">Reviews</div>
+                            <div class="blog-date">
+                                <i class="fas fa-calendar me-1"></i>3 Ene 2025
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <h5 class="blog-title">Review Detallado: Lorem Ipsum Controller Elite</h5>
+                            <p class="blog-excerpt">
+                                Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+                            </p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <i class="fas fa-user me-1"></i>ControllerPro
+                                </div>
+                                <div class="blog-read-time">
+                                    <i class="fas fa-clock me-1"></i>9 min
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paginación -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <nav aria-label="Paginación de blogs">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                        <span class="me-3">Level-up Gamer</span>
+                        <a href="#" class="text-decoration-none me-3">Gaming</a>
+                        <span class="me-2">|</span>
+                        <a href="#" class="text-decoration-none me-3">Reviews</a>
+                        <span class="me-2">|</span>
+                        <a href="#" class="text-decoration-none">Tecnología</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center justify-content-md-end">
+                        <span class="me-3">Suscríbete para recibir ofertas:</span>
+                        <div class="input-group" style="max-width: 300px;">
+                            <input type="email" class="form-control" placeholder="ejemplo@correo.com">
+                            <button class="btn btn-dark" type="button">Suscribir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">&copy; 2025 Level-up Gamer. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="js/carrito.js"></script>
+    <script>
+        // Filtro de categorías
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('[data-category]');
+            const blogCards = document.querySelectorAll('[data-category]');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Actualizar botones activos
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filtrar blogs
+                    blogCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeInUp 0.5s ease-out';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

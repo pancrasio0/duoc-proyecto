@@ -196,7 +196,7 @@ function limpiarCarrito() {
         mostrarNotificacion('Carrito vaciado', 'info');
     }
 }
-function proceder() {
+function procederCheckout() {
     const carrito = obtenerCarrito();
     if (carrito.length === 0) {
         mostrarNotificacion('Tu carrito está vacío', 'warning');

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Level-up Gamer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i><img src="img/logo.png" width="100" height="100"></i>
+            </a>
+            
+            <div class="navbar-nav me-auto">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="productos.html">Productos</a>
+                <a class="nav-link active" href="nosotros.html">Nosotros</a>
+                <a class="nav-link" href="blogs.html">Blogs</a>
+                <a class="nav-link" href="#">Contacto</a>
+            </div>
+            
+            <div class="d-flex align-items-center">
+                <a href="login.html" class="btn btn-outline-dark me-2">Iniciar sesión</a>
+                <a href="registro.html" class="btn btn-outline-dark me-2">Registrar usuario</a>
+                <a href="carrito.html" class="btn btn-outline-dark">
+                    <i class="fas fa-shopping-cart me-1"></i> Carrito (<span id="carritoCount">0</span>)
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section para Nosotros -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="display-4 fw-bold mb-4">
+                        <i class="fas fa-users me-3" style="color: var(--electric-blue);"></i>Nosotros
+                    </h1>
+                    <p class="lead mb-4">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed neque ac ex tincidunt eleifend nec nec ipsum. Duis pretium est quis lacus consectetur lobortis quis non mi.
+                    </p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fas fa-building fa-5x" style="color: var(--electric-blue); opacity: 0.3;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Principal Nosotros -->
+    <section class="py-5" style="background: linear-gradient(135deg, var(--dark-gray) 0%, var(--primary-bg) 100%);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="display-5 fw-bold mb-4" style="color: var(--electric-blue); font-family: 'Orbitron', monospace;">
+                        <i class="fas fa-users me-3"></i>Nuestra Historia
+                    </h2>
+                    <p class="lead mb-4" style="color: var(--white-text);">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                    </p>
+                    <p class="mb-4" style="color: var(--light-gray);">
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="text-center">
+                                <h4 style="color: var(--neon-green); font-family: 'Orbitron', monospace;">500+</h4>
+                                <p style="color: var(--light-gray); margin: 0;">Productos</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="text-center">
+                                <h4 style="color: var(--neon-green); font-family: 'Orbitron', monospace;">10K+</h4>
+                                <p style="color: var(--light-gray); margin: 0;">Clientes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-6 mb-3">
+                            <div class="text-center p-3" style="background: var(--card-bg); border-radius: 15px; border: 2px solid var(--dark-gray);">
+                                <i class="fas fa-gamepad fa-2x mb-2" style="color: var(--electric-blue);"></i>
+                                <h6 style="color: var(--white-text); font-family: 'Orbitron', monospace;">Gaming</h6>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <div class="text-center p-3" style="background: var(--card-bg); border-radius: 15px; border: 2px solid var(--dark-gray);">
+                                <i class="fas fa-headset fa-2x mb-2" style="color: var(--electric-blue);"></i>
+                                <h6 style="color: var(--white-text); font-family: 'Orbitron', monospace;">Audio</h6>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="text-center p-3" style="background: var(--card-bg); border-radius: 15px; border: 2px solid var(--dark-gray);">
+                                <i class="fas fa-mouse fa-2x mb-2" style="color: var(--electric-blue);"></i>
+                                <h6 style="color: var(--white-text); font-family: 'Orbitron', monospace;">Periféricos</h6>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="text-center p-3" style="background: var(--card-bg); border-radius: 15px; border: 2px solid var(--dark-gray);">
+                                <i class="fas fa-puzzle-piece fa-2x mb-2" style="color: var(--electric-blue);"></i>
+                                <h6 style="color: var(--white-text); font-family: 'Orbitron', monospace;">Juegos</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Valores -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold" style="color: var(--electric-blue); font-family: 'Orbitron', monospace;">
+                        <i class="fas fa-star me-3"></i>Nuestros Valores
+                    </h2>
+                    <p class="lead" style="color: var(--light-gray);">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center p-4" style="background: var(--card-bg); border-radius: 15px; border: 2px solid var(--dark-gray); height: 100%;">
+                        <i class="fas fa-rocket fa-3x mb-3" style="color: var(--electric-blue);"></i>
+                        <h4 style="color: var(--white-text); font-family: 'Orbitron', monospace;">Innovación</h4>
+                        <p style="color: var(--light-gray);">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center p-4" style="background: var(--card-bg); border-radius: 15px; border: 2px solid var(--dark-gray); height: 100%;">
+                        <i class="fas fa-heart fa-3x mb-3" style="color: var(--neon-green);"></i>
+                        <h4 style="color: var(--white-text); font-family: 'Orbitron', monospace;">Pasión</h4>
+                        <p style="color: var(--light-gray);">
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center p-4" style="background: var(--card-bg); border-radius: 15px; border: 2px solid var(--dark-gray); height: 100%;">
+                        <i class="fas fa-handshake fa-3x mb-3" style="color: var(--electric-blue);"></i>
+                        <h4 style="color: var(--white-text); font-family: 'Orbitron', monospace;">Confianza</h4>
+                        <p style="color: var(--light-gray);">
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Equipo -->
+    <section class="py-5" style="background: linear-gradient(135deg, var(--primary-bg) 0%, var(--dark-gray) 100%);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold" style="color: var(--electric-blue); font-family: 'Orbitron', monospace;">
+                        <i class="fas fa-users-cog me-3"></i>Nuestro Equipo
+                    </h2>
+                    <p class="lead" style="color: var(--light-gray);">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-user-circle fa-5x" style="color: var(--electric-blue);"></i>
+                        </div>
+                        <h5 style="color: var(--white-text); font-family: 'Orbitron', monospace;">Lorem Ipsum</h5>
+                        <p style="color: var(--neon-green); font-weight: 600;">CEO & Founder</p>
+                        <p style="color: var(--light-gray); font-size: 0.9rem;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-user-circle fa-5x" style="color: var(--electric-blue);"></i>
+                        </div>
+                        <h5 style="color: var(--white-text); font-family: 'Orbitron', monospace;">Dolor Sit</h5>
+                        <p style="color: var(--neon-green); font-weight: 600;">CTO</p>
+                        <p style="color: var(--light-gray); font-size: 0.9rem;">
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-user-circle fa-5x" style="color: var(--electric-blue);"></i>
+                        </div>
+                        <h5 style="color: var(--white-text); font-family: 'Orbitron', monospace;">Amet Consectetur</h5>
+                        <p style="color: var(--neon-green); font-weight: 600;">Lead Designer</p>
+                        <p style="color: var(--light-gray); font-size: 0.9rem;">
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-user-circle fa-5x" style="color: var(--electric-blue);"></i>
+                        </div>
+                        <h5 style="color: var(--white-text); font-family: 'Orbitron', monospace;">Adipiscing Elit</h5>
+                        <p style="color: var(--neon-green); font-weight: 600;">Marketing Director</p>
+                        <p style="color: var(--light-gray); font-size: 0.9rem;">
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                        <span class="me-3">Level-up Gamer</span>
+                        <a href="#" class="text-decoration-none me-3">Gaming</a>
+                        <span class="me-2">|</span>
+                        <a href="#" class="text-decoration-none me-3">Reviews</a>
+                        <span class="me-2">|</span>
+                        <a href="#" class="text-decoration-none">Tecnología</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center justify-content-md-end">
+                        <span class="me-3">Suscríbete para recibir ofertas:</span>
+                        <div class="input-group" style="max-width: 300px;">
+                            <input type="email" class="form-control" placeholder="ejemplo@correo.com">
+                            <button class="btn btn-dark" type="button">Suscribir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">&copy; 2025 Level-up Gamer. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="js/carrito.js"></script>
+</body>
+</html>
