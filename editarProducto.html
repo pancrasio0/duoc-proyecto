@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Productos - Panel de Administrador</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <nav class="admin-sidebar">
+            <!-- Logo/Company -->
+            <div class="sidebar-header">
+                <div class="company-logo">
+                    <img src="img/logo.png" alt="Level-up Gamer" class="logo-image">
+                    <span class="company-name">Level-up Gamer</span>
+                </div>
+                <hr class="sidebar-divider">
+            </div>
+
+            <!-- Main Navigation -->
+            <ul class="sidebar-nav">
+                <li class="nav-item">
+                    <a href="admin.html" class="nav-link">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="usuarios.html" class="nav-link">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>Usuarios</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#nuevoUsuarioModal">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Nuevo usuario</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#nuevoProductoModal">
+                        <i class="fas fa-box"></i>
+                        <span>Nuevo producto</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="editarProducto.html" class="nav-link">
+                        <i class="fas fa-edit"></i>
+                        <span>Editar producto</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-user-friends"></i>
+                        <span>Customers</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Utility Links -->
+            <hr class="sidebar-divider">
+            <ul class="sidebar-utility">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-search"></i>
+                        <span>Search</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Bottom Profile -->
+            <hr class="sidebar-divider">
+            <div class="sidebar-profile">
+                <div class="profile-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <span class="profile-text">Profile</span>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Header -->
+            <header class="admin-header">
+                <h1 class="admin-title">Editar Productos</h1>
+                <div class="header-actions">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nuevoProductoModal">
+                        <i class="fas fa-plus me-2"></i>NUEVO PRODUCTO
+                    </button>
+                    <i class="fas fa-bell notification-icon"></i>
+                </div>
+            </header>
+            <hr class="header-divider">
+
+            <!-- Content Area -->
+            <div class="admin-content">
+                <!-- Filter Section -->
+                <div class="filter-section">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <div class="filter-group">
+                                <label for="categoriaFilter" class="filter-label">Filtrar por categoría:</label>
+                                <select id="categoriaFilter" class="form-select filter-select">
+                                    <option value="">Todas las categorías</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="search-group">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="searchProduct" placeholder="Buscar producto...">
+                                    <button class="btn btn-outline-secondary" type="button">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Table -->
+                <div class="table-container">
+                    <table class="table table-striped table-hover" id="productosTable">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <i class="fas fa-sort me-1"></i>Código
+                                </th>
+                                <th>
+                                    <i class="fas fa-sort me-1"></i>Nombre
+                                </th>
+                                <th>
+                                    <i class="fas fa-sort me-1"></i>Categoría
+                                </th>
+                                <th>
+                                    <i class="fas fa-sort me-1"></i>Precio
+                                </th>
+                                <th>
+                                    <i class="fas fa-sort me-1"></i>Stock
+                                </th>
+                                <th>
+                                    <i class="fas fa-sort me-1"></i>Estado
+                                </th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productosTableBody">
+                            <!-- Los productos se cargarán dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label="Paginación de productos">
+                    <ul class="pagination justify-content-center" id="pagination">
+                        <!-- La paginación se generará dinámicamente -->
+                    </ul>
+                </nav>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal para Editar Producto -->
+    <div class="modal fade" id="editarProductoModal" tabindex="-1" aria-labelledby="editarProductoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editarProductoModalLabel">
+                        <i class="fas fa-edit me-2"></i>Editar Producto
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editarProductoForm">
+                        <input type="hidden" id="productoId" name="productoId">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="editCodigoProducto" class="form-label">Código Producto *</label>
+                                    <input type="text" class="form-control" id="editCodigoProducto" name="codigoProducto" minlength="3" required>
+                                    <div class="invalid-feedback">El código debe tener al menos 3 caracteres</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="editCategoriaProducto" class="form-label">Categoría *</label>
+                                    <select class="form-control" id="editCategoriaProducto" name="categoriaProducto" required>
+                                        <option value="">Seleccionar categoría</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label for="editNombreProducto" class="form-label">Nombre del Producto *</label>
+                            <input type="text" class="form-control" id="editNombreProducto" name="nombreProducto" maxlength="100" required>
+                            <div class="invalid-feedback">El nombre es requerido (máximo 100 caracteres)</div>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label for="editDescripcionProducto" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="editDescripcionProducto" name="descripcionProducto" rows="3" maxlength="500" placeholder="Descripción detallada del producto"></textarea>
+                            <div class="form-text">Máximo 500 caracteres</div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group mb-3">
+                                    <label for="editPrecioProducto" class="form-label">Precio *</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" class="form-control" id="editPrecioProducto" name="precioProducto" min="0" step="0.01" required>
+                                    </div>
+                                    <div class="invalid-feedback">El precio debe ser mayor o igual a 0</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group mb-3">
+                                    <label for="editStockProducto" class="form-label">Stock *</label>
+                                    <input type="number" class="form-control" id="editStockProducto" name="stockProducto" min="0" required>
+                                    <div class="invalid-feedback">El stock debe ser mayor o igual a 0</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group mb-3">
+                                    <label for="editStockCriticoProducto" class="form-label">Stock Crítico</label>
+                                    <input type="number" class="form-control" id="editStockCriticoProducto" name="stockCriticoProducto" min="0">
+                                    <div class="form-text">Alerta cuando el stock sea igual o inferior</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label for="editImagenProducto" class="form-label">Imagen del Producto</label>
+                            <input type="file" class="form-control" id="editImagenProducto" name="imagenProducto" accept="image/*">
+                            <div class="form-text">Formatos permitidos: JPG, PNG, GIF, WebP</div>
+                            <div id="imagenActual" class="mt-2"></div>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="editProductoActivo">
+                                <label class="form-check-label" for="editProductoActivo">
+                                    Producto activo (disponible para venta)
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="fas fa-times me-2"></i>Cancelar
+                    </button>
+                    <button type="button" class="btn btn-primary" id="actualizarProducto">
+                        <i class="fas fa-save me-2"></i>Actualizar Producto
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Nuevo Producto -->
+    <div class="modal fade" id="nuevoProductoModal" tabindex="-1" aria-labelledby="nuevoProductoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="nuevoProductoModalLabel">
+                        <i class="fas fa-box me-2"></i>Nuevo Producto
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="nuevoProductoForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="codigoProducto" class="form-label">Código Producto *</label>
+                                    <input type="text" class="form-control" id="codigoProducto" name="codigoProducto" minlength="3" required>
+                                    <div class="invalid-feedback">El código debe tener al menos 3 caracteres</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="categoriaProducto" class="form-label">Categoría *</label>
+                                    <select class="form-control" id="categoriaProducto" name="categoriaProducto" required>
+                                        <option value="">Seleccionar categoría</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label for="nombreProducto" class="form-label">Nombre del Producto *</label>
+                            <input type="text" class="form-control" id="nombreProducto" name="nombreProducto" maxlength="100" required>
+                            <div class="invalid-feedback">El nombre es requerido (máximo 100 caracteres)</div>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label for="descripcionProducto" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="descripcionProducto" name="descripcionProducto" rows="3" maxlength="500" placeholder="Descripción detallada del producto"></textarea>
+                            <div class="form-text">Máximo 500 caracteres</div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group mb-3">
+                                    <label for="precioProducto" class="form-label">Precio *</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" class="form-control" id="precioProducto" name="precioProducto" min="0" step="0.01" required>
+                                    </div>
+                                    <div class="invalid-feedback">El precio debe ser mayor o igual a 0</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group mb-3">
+                                    <label for="stockProducto" class="form-label">Stock *</label>
+                                    <input type="number" class="form-control" id="stockProducto" name="stockProducto" min="0" required>
+                                    <div class="invalid-feedback">El stock debe ser mayor o igual a 0</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group mb-3">
+                                    <label for="stockCriticoProducto" class="form-label">Stock Crítico</label>
+                                    <input type="number" class="form-control" id="stockCriticoProducto" name="stockCriticoProducto" min="0">
+                                    <div class="form-text">Alerta cuando el stock sea igual o inferior</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label for="imagenProducto" class="form-label">Imagen del Producto</label>
+                            <input type="file" class="form-control" id="imagenProducto" name="imagenProducto" accept="image/*">
+                            <div class="form-text">Formatos permitidos: JPG, PNG, GIF, WebP</div>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="productoActivo" checked>
+                                <label class="form-check-label" for="productoActivo">
+                                    Producto activo (disponible para venta)
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="fas fa-times me-2"></i>Cancelar
+                    </button>
+                    <button type="button" class="btn btn-primary" id="guardarProducto">
+                        <i class="fas fa-save me-2"></i>Guardar Producto
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/productos.js"></script>
+    <script src="js/editarProducto.js"></script>
+</body>
+</html>

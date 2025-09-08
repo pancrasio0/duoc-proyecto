@@ -1534,3 +1534,67 @@ body {
         transform: translateY(0);
     }
 }
+
+/* Estilos para la página de contacto */
+.contacto-container {
+    background: var(--card-bg);
+    border: 2px solid var(--dark-gray);
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 600px;
+    margin: 50px auto;
+    box-shadow: 0 15px 35px rgba(30, 144, 255, 0.1);
+}
+
+.contacto-title {
+    background: linear-gradient(45deg, var(--electric-blue), var(--neon-green));
+    color: var(--primary-bg);
+    text-align: center;
+    padding: 15px;
+    margin: -40px -40px 30px -40px;
+    border-radius: 13px 13px 0 0;
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.btn-enviar {
+    background: linear-gradient(45deg, var(--electric-blue), var(--neon-green));
+    border: none;
+    color: var(--primary-bg);
+    font-weight: 700;
+    font-family: 'Orbitron', monospace;
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 40px auto 0;
+}
+
+.btn-enviar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(30, 144, 255, 0.4);
+    color: var(--primary-bg);
+}
+
+.logo-section {
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--dark-gray) 100%);
+    border-bottom: 2px solid var(--electric-blue);
+}
+
+.logo-section .company-name {
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--electric-blue);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.logo-section .lead {
+    color: var(--light-gray);
+    font-size: 1.2rem;
+}

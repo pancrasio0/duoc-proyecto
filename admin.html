@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador - Level-up Gamer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <nav class="admin-sidebar">
+            <!-- Logo/Company -->
+            <div class="sidebar-header">
+                <div class="company-logo">
+                    <img src="img/logo.png" alt="Level-up Gamer" class="logo-image">
+                    <span class="company-name">Level-up Gamer</span>
+                </div>
+                <hr class="sidebar-divider">
+            </div>
+
+            <!-- Main Navigation -->
+            <ul class="sidebar-nav">
+                <li class="nav-item active">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="usuarios.html" class="nav-link">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>Usuarios</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#nuevoUsuarioModal">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Nuevo usuario</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#nuevoProductoModal">
+                        <i class="fas fa-box"></i>
+                        <span>Nuevo producto</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="editarProducto.html" class="nav-link">
+                        <i class="fas fa-edit"></i>
+                        <span>Editar Producto</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-user-friends"></i>
+                        <span>Customers</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Utility Links -->
+            <hr class="sidebar-divider">
+            <ul class="sidebar-utility">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-search"></i>
+                        <span>Search</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Bottom Profile -->
+            <hr class="sidebar-divider">
+            <div class="sidebar-profile">
+                <div class="profile-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <span class="profile-text">Profile</span>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="admin-main">
+            <!-- Header -->
+            <header class="admin-header">
+                <h1 class="admin-title">Panel de administrador</h1>
+                <div class="header-actions">
+                    <i class="fas fa-bell notification-icon"></i>
+                </div>
+            </header>
+            <hr class="header-divider">
+
+            <!-- Content Area -->
+            <div class="admin-content">
+                <div class="content-blocks">
+                    <div class="content-block top-block">
+                        <!-- Contenido del bloque superior -->
+                    </div>
+                    <div class="content-block bottom-block">
+                        <!-- Contenido del bloque inferior -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal para Nuevo Usuario -->
+    <div class="modal fade" id="nuevoUsuarioModal" tabindex="-1" aria-labelledby="nuevoUsuarioModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="nuevoUsuarioModalLabel">
+                        <i class="fas fa-user-plus me-2"></i>Nuevo Usuario
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="nuevoUsuarioForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="run" class="form-label">RUN *</label>
+                                    <input type="text" class="form-control" id="run" name="run" placeholder="19011022K" maxlength="9" required>
+                                    <div class="invalid-feedback">El RUN debe tener entre 7 y 9 caracteres sin puntos ni guiones</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="tipoUsuario" class="form-label">Tipo de Usuario *</label>
+                                    <select class="form-control" id="tipoUsuario" name="tipoUsuario" required>
+                                        <option value="">Seleccionar tipo</option>
+                                        <option value="administrador">Administrador</option>
+                                        <option value="cliente">Cliente</option>
+                                        <option value="vendedor">Vendedor</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="nombre" class="form-label">Nombre *</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre" maxlength="50" required>
+                                    <div class="invalid-feedback">El nombre es requerido (máximo 50 caracteres)</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="apellidos" class="form-label">Apellidos *</label>
+                                    <input type="text" class="form-control" id="apellidos" name="apellidos" maxlength="100" required>
+                                    <div class="invalid-feedback">Los apellidos son requeridos (máximo 100 caracteres)</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="correo" class="form-label">Correo Electrónico *</label>
+                                    <input type="email" class="form-control" id="correo" name="correo" maxlength="100" placeholder="usuario@duoc.cl" required>
+                                    <div class="invalid-feedback">Solo se permiten correos @duoc.cl, @profesor.duoc.cl o @gmail.com</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                                    <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="region" class="form-label">Región *</label>
+                                    <select class="form-control" id="region" name="region" required>
+                                        <option value="">Seleccionar región</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="comuna" class="form-label">Comuna *</label>
+                                    <select class="form-control" id="comuna" name="comuna" required disabled>
+                                        <option value="">Primero seleccione una región</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label for="direccion" class="form-label">Dirección *</label>
+                            <textarea class="form-control" id="direccion" name="direccion" rows="3" maxlength="300" placeholder="Calle, Número, Comuna, Ciudad" required></textarea>
+                            <div class="invalid-feedback">La dirección es requerida (máximo 300 caracteres)</div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="contrasena" class="form-label">Contraseña *</label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="contrasena" name="contrasena" required>
+                                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="confirmarContrasena" class="form-label">Confirmar Contraseña *</label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="confirmarContrasena" name="confirmarContrasena" required>
+                                        <button class="btn btn-outline-secondary" type="button" id="toggleConfirmPassword">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="aceptarTerminos" required>
+                                <label class="form-check-label" for="aceptarTerminos">
+                                    Acepto los términos y condiciones
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="fas fa-times me-2"></i>Cancelar
+                    </button>
+                    <button type="button" class="btn btn-primary" id="guardarUsuario">
+                        <i class="fas fa-save me-2"></i>Guardar Usuario
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Nuevo Producto -->
+    <div class="modal fade" id="nuevoProductoModal" tabindex="-1" aria-labelledby="nuevoProductoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="nuevoProductoModalLabel">
+                        <i class="fas fa-box me-2"></i>Nuevo Producto
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="nuevoProductoForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="codigoProducto" class="form-label">Código Producto *</label>
+                                    <input type="text" class="form-control" id="codigoProducto" name="codigoProducto" minlength="3" required>
+                                    <div class="invalid-feedback">El código debe tener al menos 3 caracteres</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label for="categoriaProducto" class="form-label">Categoría *</label>
+                                    <select class="form-control" id="categoriaProducto" name="categoriaProducto" required>
+                                        <option value="">Seleccionar categoría</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label for="nombreProducto" class="form-label">Nombre del Producto *</label>
+                            <input type="text" class="form-control" id="nombreProducto" name="nombreProducto" maxlength="100" required>
+                            <div class="invalid-feedback">El nombre es requerido (máximo 100 caracteres)</div>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label for="descripcionProducto" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="descripcionProducto" name="descripcionProducto" rows="3" maxlength="500" placeholder="Descripción detallada del producto"></textarea>
+                            <div class="form-text">Máximo 500 caracteres</div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group mb-3">
+                                    <label for="precioProducto" class="form-label">Precio *</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" class="form-control" id="precioProducto" name="precioProducto" min="0" step="0.01" required>
+                                    </div>
+                                    <div class="invalid-feedback">El precio debe ser mayor o igual a 0</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group mb-3">
+                                    <label for="stockProducto" class="form-label">Stock *</label>
+                                    <input type="number" class="form-control" id="stockProducto" name="stockProducto" min="0" required>
+                                    <div class="invalid-feedback">El stock debe ser mayor o igual a 0</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group mb-3">
+                                    <label for="stockCriticoProducto" class="form-label">Stock Crítico</label>
+                                    <input type="number" class="form-control" id="stockCriticoProducto" name="stockCriticoProducto" min="0">
+                                    <div class="form-text">Alerta cuando el stock sea igual o inferior</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <label for="imagenProducto" class="form-label">Imagen del Producto</label>
+                            <input type="file" class="form-control" id="imagenProducto" name="imagenProducto" accept="image/*">
+                            <div class="form-text">Formatos permitidos: JPG, PNG, GIF, WebP</div>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="productoActivo" checked>
+                                <label class="form-check-label" for="productoActivo">
+                                    Producto activo (disponible para venta)
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="fas fa-times me-2"></i>Cancelar
+                    </button>
+                    <button type="button" class="btn btn-primary" id="guardarProducto">
+                        <i class="fas fa-save me-2"></i>Guardar Producto
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/productos.js"></script>
+</body>
+</html>
