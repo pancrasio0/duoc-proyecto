@@ -1,0 +1,1600 @@
+/* Importar fuentes Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@400;500;700;900&display=swap');
+
+/* Variables CSS para los colores del diseño */
+:root {
+    --primary-bg: #000000;
+    --electric-blue: #1E90FF;
+    --neon-green: #39FF14;
+    --white-text: #FFFFFF;
+    --light-gray: #D3D3D3;
+    --dark-gray: #2a2a2a;
+    --card-bg: #1a1a1a;
+}
+.text-muted{
+    color: var(--light-gray)!important;
+}
+body {
+    background-color: var(--primary-bg);
+    color: var(--white-text);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Tipografía para encabezados */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand {
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-bg) !important;
+    border-bottom: 2px solid var(--electric-blue);
+}
+
+.navbar-nav .nav-link {
+    color: var(--white-text);
+    font-weight: 500;
+    margin: 0 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Botones del navbar */
+.navbar .btn-outline-dark {
+    border: 2px solid var(--electric-blue);
+    color: var(--electric-blue);
+    background: transparent;
+    font-weight: 500;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.navbar .btn-outline-dark:hover {
+    background: var(--electric-blue);
+    color: var(--primary-bg);
+    transform: scale(1.05);
+}
+
+/* Hero Section*/
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--dark-gray) 100%);
+    padding: 4rem 0;
+}
+
+
+/* Botón "Ver productos" */
+.btn-ver-productos {
+    background: linear-gradient(45deg, var(--electric-blue), var(--neon-green));
+    color: var(--primary-bg);
+    font-weight: 700;
+    border-radius: 25px;
+}
+
+
+/* Product Cards - Página Principal */
+.home-product-card {
+    background: var(--card-bg);
+    border: 1px solid var(--dark-gray);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.home-product-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--electric-blue);
+    box-shadow: 0 15px 35px rgba(30, 144, 255, 0.2);
+}
+
+/* Textos de productos - Página Principal */
+.home-product-card h6 {
+    color: var(--electric-blue);
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+}
+
+.home-product-card .text-muted {
+    color: var(--light-gray); 
+}
+
+.home-product-card .fw-bold {
+    color: var(--neon-green);
+    font-family: 'Orbitron', monospace;
+    font-size: 1.2rem;
+}
+
+/* Newsletter section */
+.newsletter-section {
+    background: linear-gradient(90deg, var(--dark-gray), #2d2d2d);
+    border-top: 2px solid var(--electric-blue);
+    border-bottom: 2px solid var(--neon-green);
+    padding: 1rem 0;
+}
+
+.newsletter-section .form-control {
+    background-color: var(--primary-bg);
+    border: 2px solid var(--electric-blue);
+    color: var(--white-text);
+    border-radius: 20px;
+}
+
+.newsletter-section .form-control:focus {
+    background-color: var(--primary-bg);
+    border-color: var(--neon-green);
+    color: var(--white-text);
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+}
+
+.newsletter-section .form-control::placeholder {
+    color: var(--light-gray);
+}
+
+.newsletter-section .btn-dark {
+    background: linear-gradient(45deg, var(--electric-blue), var(--neon-green));
+    border: none;
+    color: var(--primary-bg);
+    font-weight: 700;
+    border-radius: 20px;
+}
+
+.newsletter-section a {
+    color: var(--light-gray);
+    transition: color 0.3s ease;
+}
+
+.newsletter-section a:hover {
+    color: var(--electric-blue);
+}
+
+/* Footer mejorado */
+.footer {
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--dark-gray) 100%);
+    border-top: 3px solid var(--electric-blue);
+    padding: 2rem 0;
+    margin-top: 0;
+}
+
+.social-icons a {
+    color: var(--light-gray);
+    font-size: 1.8rem;
+    margin-right: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--electric-blue);
+}
+
+.home-product-card {
+    background: #2a2a2a;
+    border-radius: 15px;
+    padding: 20px;
+    height: 300px;
+    /* Altura fija para todas las tarjetas */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #404040;
+}
+
+.home-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.3);
+}
+
+/* Estilos para productos clickeables */
+.home-product-card[onclick] {
+    transition: all 0.3s ease;
+}
+
+.home-product-card[onclick]:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(30, 144, 255, 0.4);
+    border-color: var(--electric-blue);
+}
+
+.home-product-card[onclick]:active {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(30, 144, 255, 0.3);
+}
+
+.home-product-image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    overflow: hidden;
+    /* Evita que las imágenes se salgan */
+}
+
+.home-product-image {
+    max-width: 120px;
+    max-height: 120px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    /* Mantiene la proporción sin recortar */
+}
+
+.home-product-info {
+    text-align: center;
+}
+
+.home-product-name {
+    color: #007bff;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    min-height: 24px;
+    /* Altura mínima para consistencia */
+}
+
+.home-product-price {
+    color: #00ff00;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .home-product-card {
+        height: 280px;
+    }
+
+    .home-product-image {
+        max-width: 100px;
+        max-height: 100px;
+    }
+}
+
+
+/* Registro */
+
+.registro-container {
+    background: var(--card-bg);
+    border: 2px solid var(--dark-gray);
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 600px;
+    margin: 50px auto;
+    box-shadow: 0 15px 35px rgba(30, 144, 255, 0.1);
+}
+
+.registro-title {
+    background: linear-gradient(45deg, var(--electric-blue), var(--neon-green));
+    color: var(--primary-bg);
+    text-align: center;
+    padding: 15px;
+    margin: -40px -40px 30px -40px;
+    border-radius: 13px 13px 0 0;
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    color: var(--electric-blue);
+    font-family: 'Orbitron', monospace;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-control {
+    background-color: var(--primary-bg);
+    border: 2px solid var(--dark-gray);
+    color: var(--white-text);
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: var(--primary-bg);
+    border-color: var(--electric-blue);
+    color: var(--white-text);
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.3);
+}
+
+.form-control::placeholder {
+    color: var(--light-gray);
+}
+
+.form-select {
+    background-color: var(--primary-bg);
+    border: 2px solid var(--dark-gray);
+    color: var(--white-text);
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+
+.form-select:focus {
+    background-color: var(--primary-bg);
+    border-color: var(--electric-blue);
+    color: var(--white-text);
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.3);
+}
+
+.form-select option {
+    background-color: var(--primary-bg);
+    color: var(--white-text);
+}
+
+.btn-registrar {
+    background: linear-gradient(45deg, var(--electric-blue), var(--neon-green));
+    border: none;
+    color: var(--primary-bg);
+    font-weight: 700;
+    font-family: 'Orbitron', monospace;
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 40px auto 0;
+}
+
+.btn-registrar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(30, 144, 255, 0.4);
+    color: var(--primary-bg);
+}
+
+.row.form-row {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.row.form-row .col-md-6 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Override para mantener el tema oscuro en esta página */
+body {
+    background-color: var(--primary-bg) !important;
+    color: var(--white-text) !important;
+}
+
+.navbar {
+    background-color: var(--primary-bg) !important;
+}
+
+.navbar .nav-link {
+    color: var(--white-text) !important;
+}
+
+.navbar-brand {
+    color: var(--white-text) !important;
+}
+
+/* Estilos para mensajes de error en formularios */
+.error-message {
+    font-size: 0.875rem;
+    color: #ff4757 !important;
+    margin-top: 0.25rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.error-message::before {
+    content: "⚠";
+    font-size: 0.75rem;
+}
+
+.form-control.is-invalid,
+.form-select.is-invalid {
+    border-color: #ff4757 !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 71, 87, 0.25) !important;
+}
+
+.form-control.is-invalid:focus,
+.form-select.is-invalid:focus {
+    border-color: #ff4757 !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 71, 87, 0.25) !important;
+}
+
+
+/* Login */
+.login-container {
+    background: var(--card-bg);
+    border: 2px solid var(--dark-gray);
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 500px;
+    margin: 50px auto;
+    box-shadow: 0 15px 35px rgba(30, 144, 255, 0.1);
+}
+
+.login-title {
+    background: linear-gradient(45deg, var(--electric-blue), var(--neon-green));
+    color: var(--primary-bg);
+    text-align: center;
+    padding: 15px;
+    margin: -40px -40px 30px -40px;
+    border-radius: 13px 13px 0 0;
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+
+.btn-login {
+    background: linear-gradient(45deg, var(--electric-blue), var(--neon-green));
+    border: none;
+    color: var(--primary-bg);
+    font-weight: 700;
+    font-family: 'Orbitron', monospace;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    float: right;
+}
+
+.btn-login:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(30, 144, 255, 0.4);
+    color: var(--primary-bg);
+}
+
+.logo-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo-section img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+}
+
+.company-name {
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--electric-blue);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login-links {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--dark-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.login-links a {
+    color: var(--electric-blue);
+    text-decoration: none;
+    font-family: 'Orbitron', monospace;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.login-links a:hover {
+    color: var(--neon-green);
+}
+
+/* Estilos para la página de perfil */
+.profile-sidebar {
+    background: var(--card-bg);
+    border: 2px solid var(--dark-gray);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(30, 144, 255, 0.1);
+    position: sticky;
+    top: 20px;
+}
+
+.avatar-container {
+    position: relative;
+    display: inline-block;
+}
+
+.avatar-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid var(--electric-blue);
+    object-fit: cover;
+}
+
+.btn-edit-avatar {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: var(--electric-blue);
+    border: none;
+    color: var(--primary-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.btn-edit-avatar:hover {
+    background: var(--neon-green);
+    transform: scale(1.1);
+}
+
+.profile-nav .nav-link {
+    color: var(--light-gray);
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.profile-nav .nav-link:hover {
+    color: var(--electric-blue);
+    background: rgba(30, 144, 255, 0.1);
+    border-color: var(--electric-blue);
+}
+
+.profile-nav .nav-link.active {
+    color: var(--white-text);
+    background: linear-gradient(45deg, var(--electric-blue), var(--neon-green));
+    border-color: var(--electric-blue);
+}
+
+.profile-section {
+    display: none;
+}
+
+.profile-section.active {
+    display: block;
+}
+
+.profile-container {
+    background: var(--card-bg);
+    border: 2px solid var(--dark-gray);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(30, 144, 255, 0.1);
+}
+
+.profile-title {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--dark-gray);
+}
+
+.profile-title h2 {
+    color: var(--electric-blue);
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.profile-title p {
+    color: var(--light-gray);
+    margin: 0;
+}
+
+.profile-form .form-group {
+    margin-bottom: 25px;
+}
+
+.profile-form .form-label {
+    color: var(--electric-blue);
+    font-family: 'Orbitron', monospace;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.profile-form .form-control,
+.profile-form .form-select {
+    background-color: var(--primary-bg);
+    border: 2px solid var(--dark-gray);
+    color: var(--white-text);
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.profile-form .form-control:focus,
+.profile-form .form-select:focus {
+    background-color: var(--primary-bg);
+    border-color: var(--electric-blue);
+    color: var(--white-text);
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.3);
+}
+
+.profile-form .form-control::placeholder {
+    color: var(--light-gray);
+}
+
+.profile-form .form-select option {
+    background-color: var(--primary-bg);
+    color: var(--white-text);
+}
+
+.profile-form .form-check-input {
+    background-color: var(--primary-bg);
+    border: 2px solid var(--dark-gray);
+}
+
+.profile-form .form-check-input:checked {
+    background-color: var(--electric-blue);
+    border-color: var(--electric-blue);
+}
+
+.profile-form .form-check-label {
+    color: var(--white-text);
+    margin-left: 8px;
+}
+
+.form-actions {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid var(--dark-gray);
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, var(--electric-blue), var(--neon-green));
+    border: none;
+    color: var(--primary-bg);
+    font-weight: 700;
+    font-family: 'Orbitron', monospace;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(30, 144, 255, 0.4);
+    color: var(--primary-bg);
+}
+
+.btn-outline-secondary {
+    border: 2px solid var(--dark-gray);
+    color: var(--light-gray);
+    background: transparent;
+    font-weight: 500;
+    padding: 12px 30px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+    border-color: var(--electric-blue);
+    color: var(--electric-blue);
+    background: rgba(30, 144, 255, 0.1);
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--electric-blue);
+    color: var(--electric-blue);
+    background: transparent;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background: var(--electric-blue);
+    color: var(--primary-bg);
+    transform: scale(1.05);
+}
+
+/* Timeline de actividad */
+.activity-timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.activity-timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--electric-blue);
+}
+
+.activity-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 30px;
+}
+
+.activity-item::before {
+    content: '';
+    position: absolute;
+    left: -22px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--neon-green);
+    border: 3px solid var(--primary-bg);
+}
+
+.activity-icon {
+    position: absolute;
+    left: -30px;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background: var(--electric-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-bg);
+    font-size: 14px;
+}
+
+.activity-content h6 {
+    color: var(--electric-blue);
+    font-family: 'Orbitron', monospace;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.activity-content p {
+    color: var(--white-text);
+    margin-bottom: 5px;
+}
+
+.activity-content small {
+    color: var(--light-gray);
+}
+
+/* Modal personalizado */
+.modal-content {
+    background: var(--card-bg);
+    border: 2px solid var(--dark-gray);
+    border-radius: 15px;
+}
+
+.modal-header {
+    border-bottom: 2px solid var(--dark-gray);
+}
+
+.modal-title {
+    color: var(--electric-blue);
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+}
+
+.modal-body {
+    color: var(--white-text);
+}
+
+.modal-footer {
+    border-top: 2px solid var(--dark-gray);
+}
+
+.btn-close {
+    filter: invert(1);
+}
+
+/* Estilos para la página de producto */
+.product-image-container {
+    position: relative;
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px solid var(--dark-gray);
+    box-shadow: 0 10px 30px rgba(30, 144, 255, 0.1);
+}
+
+.product-main-image {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.product-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.product-info {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 30px;
+    border: 2px solid var(--dark-gray);
+    box-shadow: 0 10px 30px rgba(30, 144, 255, 0.1);
+}
+
+.product-category .badge {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+    border-radius: 20px;
+}
+
+.product-title {
+    color: var(--electric-blue);
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.product-price {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.price-current {
+    color: var(--neon-green);
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.price-currency {
+    color: var(--light-gray);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.product-description h5,
+.product-features h5 {
+    color: var(--electric-blue);
+    font-family: 'Orbitron', monospace;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.product-description p {
+    color: var(--white-text);
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.product-features ul li {
+    color: var(--white-text);
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.product-actions {
+    background: rgba(30, 144, 255, 0.05);
+    border-radius: 10px;
+    padding: 25px;
+    border: 1px solid var(--dark-gray);
+}
+
+.product-actions .form-label {
+    color: var(--electric-blue);
+    font-family: 'Orbitron', monospace;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.product-actions .input-group .btn {
+    background: var(--primary-bg);
+    border-color: var(--dark-gray);
+    color: var(--white-text);
+    transition: all 0.3s ease;
+}
+
+.product-actions .input-group .btn:hover {
+    background: var(--electric-blue);
+    border-color: var(--electric-blue);
+    color: var(--primary-bg);
+}
+
+.product-actions .form-control {
+    background: var(--primary-bg);
+    border-color: var(--dark-gray);
+    color: var(--white-text);
+    text-align: center;
+    font-weight: 600;
+}
+
+.product-actions .form-control:focus {
+    background: var(--primary-bg);
+    border-color: var(--electric-blue);
+    color: var(--white-text);
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.3);
+}
+
+.btn-lg {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-lg:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(30, 144, 255, 0.3);
+}
+
+/* Breadcrumb personalizado */
+.breadcrumb {
+    background: transparent;
+    padding: 0;
+}
+
+.breadcrumb-item a {
+    color: var(--electric-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: var(--neon-green);
+}
+
+.breadcrumb-item.active {
+    color: var(--white-text);
+}
+
+/* Productos relacionados */
+#productosRelacionados .product-card {
+    background: var(--card-bg);
+    border: 2px solid var(--dark-gray);
+    border-radius: 15px;
+    padding: 20px;
+    height: 100%;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#productosRelacionados .product-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--electric-blue);
+    box-shadow: 0 15px 35px rgba(30, 144, 255, 0.2);
+}
+
+#productosRelacionados .product-image-container {
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    margin-bottom: 15px;
+}
+
+#productosRelacionados .product-image {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+#productosRelacionados .product-name {
+    color: var(--electric-blue);
+    font-family: 'Orbitron', monospace;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    min-height: 24px;
+}
+
+#productosRelacionados .product-price {
+    color: var(--neon-green);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+#productosRelacionados .btn-outline-primary {
+    border-color: var(--electric-blue);
+    color: var(--electric-blue);
+    background: transparent;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+#productosRelacionados .btn-outline-primary:hover {
+    background: var(--electric-blue);
+    color: var(--primary-bg);
+    transform: scale(1.05);
+}
+
+/* Modal personalizado para confirmación */
+.modal-content {
+    background: var(--card-bg);
+    border: 2px solid var(--dark-gray);
+    border-radius: 15px;
+}
+
+.modal-header {
+    border-bottom: 2px solid var(--dark-gray);
+}
+
+.modal-title {
+    color: var(--electric-blue);
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+}
+
+.modal-body {
+    color: var(--white-text);
+}
+
+.modal-footer {
+    border-top: 2px solid var(--dark-gray);
+}
+
+.modal-body img {
+    border-radius: 8px;
+    border: 2px solid var(--dark-gray);
+}
+
+
+.product-image-container,
+.product-info {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.product-image-container {
+    animation-delay: 0.1s;
+}
+
+.product-info {
+    animation-delay: 0.2s;
+}
+
+/* Estados de carga */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid var(--electric-blue);
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@media (min-width: 768px) {
+    .col-md-4 {
+        flex: auto;
+    }
+}
+
+/* Estilos para el carrito de compras */
+.empty-cart-container {
+    background: var(--card-bg);
+    border: 2px solid var(--dark-gray);
+    border-radius: 15px;
+    padding: 60px 40px;
+    box-shadow: 0 15px 35px rgba(30, 144, 255, 0.1);
+}
+
+.cart-items-container {
+    background: var(--card-bg);
+    border: 2px solid var(--dark-gray);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(30, 144, 255, 0.1);
+    margin-bottom: 30px;
+}
+
+.cart-item {
+    background: rgba(30, 144, 255, 0.05);
+    border: 1px solid var(--dark-gray);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.cart-item:hover {
+    border-color: var(--electric-blue);
+    box-shadow: 0 5px 15px rgba(30, 144, 255, 0.2);
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 2px solid var(--dark-gray);
+}
+
+.cart-item-name {
+    color: var(--electric-blue);
+    font-family: 'Orbitron', monospace;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.cart-item-category {
+    color: var(--light-gray);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.quantity-controls .btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.quantity-display {
+    color: var(--white-text);
+    font-weight: 600;
+    font-size: 1.1rem;
+    min-width: 30px;
+    text-align: center;
+}
+
+.cart-item-price {
+    color: var(--light-gray);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.cart-item-total {
+    color: var(--neon-green);
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.order-summary-container {
+    background: var(--card-bg);
+    border: 2px solid var(--dark-gray);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(30, 144, 255, 0.1);
+    position: sticky;
+    top: 20px;
+}
+
+.summary-details {
+    background: rgba(30, 144, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.summary-details hr {
+    border-color: var(--dark-gray);
+    margin: 15px 0;
+}
+
+.discount-section {
+    background: rgba(30, 144, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.discount-section .form-label {
+    color: var(--electric-blue);
+    font-family: 'Orbitron', monospace;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.discount-section .form-control {
+    background-color: var(--primary-bg);
+    border: 2px solid var(--dark-gray);
+    color: var(--white-text);
+    border-radius: 8px;
+}
+
+.discount-section .form-control:focus {
+    background-color: var(--primary-bg);
+    border-color: var(--electric-blue);
+    color: var(--white-text);
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.3);
+}
+
+.discount-section .form-control::placeholder {
+    color: var(--light-gray);
+}
+
+.cart-actions .btn {
+    font-family: 'Orbitron', monospace;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.cart-actions .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(30, 144, 255, 0.3);
+}
+
+.cart-actions .btn-primary {
+    background: linear-gradient(45deg, var(--electric-blue), var(--neon-green));
+    border: none;
+    color: var(--primary-bg);
+}
+
+.cart-actions .btn-outline-secondary {
+    border: 2px solid var(--dark-gray);
+    color: var(--light-gray);
+    background: transparent;
+}
+
+.cart-actions .btn-outline-secondary:hover {
+    border-color: var(--electric-blue);
+    color: var(--electric-blue);
+    background: rgba(30, 144, 255, 0.1);
+}
+
+.cart-actions .btn-outline-primary {
+    border: 2px solid var(--electric-blue);
+    color: var(--electric-blue);
+    background: transparent;
+}
+
+.cart-actions .btn-outline-primary:hover {
+    background: var(--electric-blue);
+    color: var(--primary-bg);
+}
+
+/* Animaciones para el carrito */
+.cart-item {
+    animation: slideInUp 0.5s ease-out;
+}
+
+
+
+/* Estilos para notificaciones */
+.alert {
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.alert-success {
+    background: linear-gradient(45deg, #28a745, #20c997);
+    color: white;
+}
+
+.alert-info {
+    background: linear-gradient(45deg, #17a2b8, #6f42c1);
+    color: white;
+}
+
+.alert-warning {
+    background: linear-gradient(45deg, #ffc107, #fd7e14);
+    color: #212529;
+}
+
+.alert-danger {
+    background: linear-gradient(45deg, #dc3545, #e83e8c);
+    color: white;
+}
+
+/* Estilos para la página de blogs */
+.blog-card {
+    background: var(--card-bg);
+    border: 2px solid var(--dark-gray);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--electric-blue);
+    box-shadow: 0 15px 35px rgba(30, 144, 255, 0.2);
+}
+
+.blog-image-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.blog-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover .blog-image {
+    transform: scale(1.05);
+}
+
+.blog-category {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(45deg, var(--electric-blue), var(--neon-green));
+    color: var(--primary-bg);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: 'Orbitron', monospace;
+}
+
+.blog-date {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--white-text);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    backdrop-filter: blur(10px);
+}
+
+.blog-content {
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-title {
+    color: var(--electric-blue);
+    font-family: 'Orbitron', monospace;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    line-height: 1.3;
+    min-height: 60px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.blog-excerpt {
+    color: var(--light-gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.blog-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid var(--dark-gray);
+}
+
+.blog-author,
+.blog-read-time {
+    color: var(--light-gray);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+}
+
+.blog-author i,
+.blog-read-time i {
+    color: var(--electric-blue);
+    margin-right: 5px;
+}
+
+/* Filtros de categorías */
+.btn-outline-primary.active {
+    background: linear-gradient(45deg, var(--electric-blue), var(--neon-green));
+    border-color: var(--electric-blue);
+    color: var(--primary-bg);
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--electric-blue);
+    color: var(--electric-blue);
+    background: transparent;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    margin: 2px;
+}
+
+.btn-outline-primary:hover {
+    background: var(--electric-blue);
+    color: var(--primary-bg);
+    transform: scale(1.05);
+}
+
+.pagination .page-link {
+    background: var(--card-bg);
+    border: 2px solid var(--dark-gray);
+    color: var(--white-text);
+    padding: 10px 15px;
+    margin: 0 2px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.pagination .page-link:hover {
+    background: var(--electric-blue);
+    border-color: var(--electric-blue);
+    color: var(--primary-bg);
+    transform: translateY(-2px);
+}
+
+.pagination .page-item.active .page-link {
+    background: linear-gradient(45deg, var(--electric-blue), var(--neon-green));
+    border-color: var(--electric-blue);
+    color: var(--primary-bg);
+}
+
+.pagination .page-item.disabled .page-link {
+    background: var(--dark-gray);
+    border-color: var(--dark-gray);
+    color: var(--light-gray);
+    opacity: 0.5;
+}
+
+/* Animación para filtros */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para la página de contacto */
+.contacto-container {
+    background: var(--card-bg);
+    border: 2px solid var(--dark-gray);
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 600px;
+    margin: 50px auto;
+    box-shadow: 0 15px 35px rgba(30, 144, 255, 0.1);
+}
+
+.contacto-title {
+    background: linear-gradient(45deg, var(--electric-blue), var(--neon-green));
+    color: var(--primary-bg);
+    text-align: center;
+    padding: 15px;
+    margin: -40px -40px 30px -40px;
+    border-radius: 13px 13px 0 0;
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.btn-enviar {
+    background: linear-gradient(45deg, var(--electric-blue), var(--neon-green));
+    border: none;
+    color: var(--primary-bg);
+    font-weight: 700;
+    font-family: 'Orbitron', monospace;
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 40px auto 0;
+}
+
+.btn-enviar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(30, 144, 255, 0.4);
+    color: var(--primary-bg);
+}
+
+.logo-section {
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--dark-gray) 100%);
+    border-bottom: 2px solid var(--electric-blue);
+}
+
+.logo-section .company-name {
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--electric-blue);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.logo-section .lead {
+    color: var(--light-gray);
+    font-size: 1.2rem;
+}
