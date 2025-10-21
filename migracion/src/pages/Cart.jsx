@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Newsletter from '../components/common/Newsletter';
 import NotificationContainer from '../components/common/NotificationContainer';
 import { formatearPrecio } from '../utils/formatters';
@@ -8,6 +8,7 @@ import { productos } from '../data/productos';
 import { useNotifications } from '../hooks/useNotifications';
 
 const Cart = () => {
+    const navigate = useNavigate();
     const { 
         carrito, 
         eliminarDelCarrito, 
@@ -128,11 +129,7 @@ const Cart = () => {
             return;
         }
         
-        addNotification('Redirigiendo al checkout...', 'info');
-        
-        setTimeout(() => {
-            alert('Checkout sin hacer');
-        }, 2000);
+        navigate('/checkout');
     };
 
 

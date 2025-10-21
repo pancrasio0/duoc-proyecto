@@ -2,107 +2,15 @@ import React from 'react';
 
 const Dashboard = () => {
     return (
-        <div className="admin-container">
-            {/* Sidebar */}
-            <nav className="admin-sidebar">
-                {/* Logo/Company */}
-                <div className="sidebar-header">
-                    <div className="company-logo">
-                        <img src="/img/logo.png" alt="Level-up Gamer" className="logo-image" />
-                        <span className="company-name">Level-up Gamer</span>
-                    </div>
-                    <hr className="sidebar-divider" />
+        <>
+            {/* Header */}
+            <header className="admin-header">
+                <h1 className="admin-title">Panel de administrador</h1>
+                <div className="header-actions">
+                    <i className="fas fa-bell notification-icon"></i>
                 </div>
-
-                {/* Main Navigation */}
-                <ul className="sidebar-nav">
-                    <li className="nav-item active">
-                        <a href="#" className="nav-link">
-                            <i className="fas fa-th-large"></i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a href="/admin/usuarios" className="nav-link">
-                            <i className="fas fa-clipboard-list"></i>
-                            <span>Usuarios</span>
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a href="#" className="nav-link" data-bs-toggle="modal" data-bs-target="#nuevoUsuarioModal">
-                            <i className="fas fa-user-plus"></i>
-                            <span>Nuevo usuario</span>
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a href="#" className="nav-link" data-bs-toggle="modal" data-bs-target="#nuevoProductoModal">
-                            <i className="fas fa-box"></i>
-                            <span>Nuevo producto</span>
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a href="/admin/editar-producto" className="nav-link">
-                            <i className="fas fa-edit"></i>
-                            <span>Editar Producto</span>
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a href="#" className="nav-link">
-                            <i className="fas fa-user-friends"></i>
-                            <span>Customers</span>
-                        </a>
-                    </li>
-                </ul>
-
-                {/* Utility Links */}
-                <hr className="sidebar-divider" />
-                <ul className="sidebar-utility">
-                    <li className="nav-item">
-                        <a href="#" className="nav-link">
-                            <i className="fas fa-cog"></i>
-                            <span>Settings</span>
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a href="#" className="nav-link">
-                            <i className="fas fa-user-plus"></i>
-                            <span>Profile</span>
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a href="#" className="nav-link">
-                            <i className="fas fa-search"></i>
-                            <span>Search</span>
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a href="#" className="nav-link">
-                            <i className="fas fa-question-circle"></i>
-                            <span>Help</span>
-                        </a>
-                    </li>
-                </ul>
-
-                {/* Bottom Profile */}
-                <hr className="sidebar-divider" />
-                <div className="sidebar-profile">
-                    <div className="profile-icon">
-                        <i className="fas fa-user"></i>
-                    </div>
-                    <span className="profile-text">Profile</span>
-                </div>
-            </nav>
-
-            {/* Main Content Area */}
-            <main className="admin-main">
-                {/* Header */}
-                <header className="admin-header">
-                    <h1 className="admin-title">Panel de administrador</h1>
-                    <div className="header-actions">
-                        <i className="fas fa-bell notification-icon"></i>
-                    </div>
-                </header>
-                <hr className="header-divider" />
+            </header>
+            <hr className="header-divider" />
 
                 {/* Content Area */}
                 <div className="admin-content">
@@ -242,8 +150,7 @@ const Dashboard = () => {
                         </div>
                     </div>
                 </div>
-            </main>
-        </div>
+        </>
     );
 };
 

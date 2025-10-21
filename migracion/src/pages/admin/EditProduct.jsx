@@ -159,51 +159,17 @@ const EditProduct = () => {
     };
 
     return (
-        <div className="admin-container">
-            {/* Sidebar */}
-            <nav className="admin-sidebar">
-                <div className="sidebar-header">
-                    <div className="company-logo">
-                        <img src="/img/logo.png" alt="Level-up Gamer" className="logo-image" />
-                        <span className="company-name">Level-up Gamer</span>
-                    </div>
-                    <hr className="sidebar-divider" />
-                </div>
-
-                <ul className="sidebar-nav">
-                    <li className="nav-item">
-                        <a href="/admin" className="nav-link">
-                            <i className="fas fa-th-large"></i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a href="/admin/usuarios" className="nav-link">
-                            <i className="fas fa-clipboard-list"></i>
-                            <span>Usuarios</span>
-                        </a>
-                    </li>
-                    <li className="nav-item active">
-                        <a href="/admin/editar-producto" className="nav-link">
-                            <i className="fas fa-edit"></i>
-                            <span>Editar producto</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
-            {/* Main Content */}
-            <main className="admin-main">
-                <header className="admin-header">
-                    <h1 className="admin-title">Editar Productos</h1>
-                           <div className="header-actions">
-                               <button className="btn btn-primary" onClick={handleNuevoProducto}>
-                                   <i className="fas fa-plus me-2"></i>NUEVO PRODUCTO
-                               </button>
-                               <i className="fas fa-bell notification-icon"></i>
-                           </div>
-                </header>
-                <hr className="header-divider" />
+        <>
+            <header className="admin-header">
+                <h1 className="admin-title">Editar Productos</h1>
+                       <div className="header-actions">
+                           <button className="btn btn-primary" onClick={handleNuevoProducto}>
+                               <i className="fas fa-plus me-2"></i>NUEVO PRODUCTO
+                           </button>
+                           <i className="fas fa-bell notification-icon"></i>
+                       </div>
+            </header>
+            <hr className="header-divider" />
 
                 <div className="admin-content">
                     {/* Filter Section */}
@@ -315,7 +281,6 @@ const EditProduct = () => {
                         </ul>
                     </nav>
                 </div>
-            </main>
 
             {/* Modal para Editar/Crear Producto */}
             {mostrarModal && (
@@ -496,7 +461,7 @@ const EditProduct = () => {
                     </div>
                 </div>
             )}
-        </div>
+        </>
     );
 };
 

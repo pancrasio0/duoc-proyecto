@@ -14,6 +14,8 @@ const ProductDetail = () => {
     const [cantidad, setCantidad] = useState(1);
     const [productosRelacionados, setProductosRelacionados] = useState([]);
     const [showModal, setShowModal] = useState(false);
+    const [rating, setRating] = useState(0);
+    const [hoverRating, setHoverRating] = useState(0);
 
     useEffect(() => {
         const productoEncontrado = getProductById(id);
@@ -174,6 +176,27 @@ const ProductDetail = () => {
                             <div className="product-price mb-4">
                                 <span className="price-current">{formatearPrecio(producto.precio)}</span>
                                 <span className="price-currency"> CLP</span>
+                            </div>
+
+                            <div className="product-rating mb-4">
+                                <h6>Califica este producto:</h6>
+                                <div className="stars-container">
+                                    {[1, 2, 3, 4, 5].map((star) => (
+                                        <i
+                                            key={star}
+                                            className={`fas fa-star ${
+                                                star <= (hoverRating || rating) ? 'text-warning' : 'text-muted'
+                                            }`}
+                                            style={{ cursor: 'pointer', fontSize: '1.5rem', marginRight: '5px' }}
+                                            onMouseEnter={() => setHoverRating(star)}
+                                            onMouseLeave={() => setHoverRating(0)}
+                                            onClick={() => setRating(star)}
+                                        ></i>
+                                    ))}
+                                    {rating > 0 && (
+                                        <span className="ms-2 text-muted">({rating}/5 estrellas)</span>
+                                    )}
+                                </div>
                             </div>
 
                             <div className="product-description mb-4">

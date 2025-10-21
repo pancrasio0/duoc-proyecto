@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import './assets/styles/styles.css';
+import './assets/styles/admin.css';
 import { CartProvider } from './context/CartContext';
 import AppRoutes from './routes/AppRoutes';
 import "bootstrap/dist/css/bootstrap.min.css";

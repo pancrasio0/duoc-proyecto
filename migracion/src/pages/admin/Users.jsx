@@ -100,54 +100,20 @@ const Users = () => {
     };
 
     return (
-        <div className="admin-container">
-            {/* Sidebar */}
-            <nav className="admin-sidebar">
-                <div className="sidebar-header">
-                    <div className="company-logo">
-                        <img src="/img/logo.png" alt="Level-up Gamer" className="logo-image" />
-                        <span className="company-name">Level-up Gamer</span>
-                    </div>
-                    <hr className="sidebar-divider" />
+        <>
+            <header className="admin-header">
+                <h1 className="admin-title">Usuarios</h1>
+                <div className="header-actions">
+                    <button 
+                        className="btn btn-nuevo-usuario" 
+                        onClick={() => setMostrarModal(true)}
+                    >
+                        <i className="fas fa-plus me-2"></i>NUEVO USUARIO
+                    </button>
+                    <i className="fas fa-bell notification-icon"></i>
                 </div>
-
-                <ul className="sidebar-nav">
-                    <li className="nav-item">
-                        <a href="/admin" className="nav-link">
-                            <i className="fas fa-th-large"></i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-                    <li className="nav-item active">
-                        <a href="/admin/usuarios" className="nav-link">
-                            <i className="fas fa-clipboard-list"></i>
-                            <span>Usuarios</span>
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a href="/admin/editar-producto" className="nav-link">
-                            <i className="fas fa-edit"></i>
-                            <span>Editar producto</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
-            {/* Main Content Area */}
-            <main className="admin-main">
-                <header className="admin-header">
-                    <h1 className="admin-title">Usuarios</h1>
-                    <div className="header-actions">
-                        <button 
-                            className="btn btn-nuevo-usuario" 
-                            onClick={() => setMostrarModal(true)}
-                        >
-                            <i className="fas fa-plus me-2"></i>NUEVO USUARIO
-                        </button>
-                        <i className="fas fa-bell notification-icon"></i>
-                    </div>
-                </header>
-                <hr className="header-divider" />
+            </header>
+            <hr className="header-divider" />
 
                 <div className="admin-content">
                     {/* Filter Section */}
@@ -314,7 +280,6 @@ const Users = () => {
                         </nav>
                     </div>
                 </div>
-            </main>
 
             {/* Modal para Editar/Crear Usuario */}
             {mostrarModal && (
@@ -530,7 +495,7 @@ const Users = () => {
                     </div>
                 </div>
             )}
-        </div>
+        </>
     );
 };
 
