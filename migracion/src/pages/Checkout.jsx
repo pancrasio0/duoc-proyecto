@@ -55,8 +55,16 @@ const Checkout = () => {
             return;
         }
 
-        alert('¡Pago procesado exitosamente! (Simulación)');
-        navigate('/');
+        const success = !formData.correo.toLowerCase().includes('test') && !formData.correo.toLowerCase().includes('error');
+        
+        navigate('/payment-result', {
+            state: {
+                success,
+                formData,
+                carrito,
+                total
+            }
+        });
     };
 
     if (carrito.length === 0) {
