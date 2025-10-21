@@ -2,13 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import { formatearPrecio } from '../../utils/formatters';
+import { useNotifications } from '../../hooks/useNotifications';
 
 const ProductCard = ({ producto }) => {
-    const { agregarAlCarrito } = useCart();
+    const { agregarAlCarrito, estaEnCarrito } = useCart();
+    const { addNotification } = useNotifications();
 
     const handleAgregarCarrito = (e) => {
         e.stopPropagation();
+        
+        if (!producto.disponible || producto.stock <= 0) {
+            addNotification('Este producto no está disponible', 'warning');
+            return;
+        }
+        
         agregarAlCarrito(producto.id);
+        addNotification(`${producto.nombre} agregado al carrito`, 'success');
     };
 
     return (
@@ -26,10 +35,29 @@ const ProductCard = ({ producto }) => {
                 </Link>
                 <p className="home-product-price">{formatearPrecio(producto.precio)}</p>
                 <button 
-                    className="btn btn-sm btn-outline-primary mt-2 w-100" 
+                    className={`btn btn-sm mt-2 w-100 ${
+                        !producto.disponible || producto.stock <= 0 
+                            ? 'btn-secondary' 
+                            : estaEnCarrito(producto.id) 
+                                ? 'btn-success' 
+                                : 'btn-outline-primary'
+                    }`}
                     onClick={handleAgregarCarrito}
+                    disabled={!producto.disponible || producto.stock <= 0}
                 >
-                    <i className="fas fa-cart-plus me-1"></i>Agregar al Carrito
+                    <i className={`fas ${
+                        !producto.disponible || producto.stock <= 0 
+                            ? 'fa-times-circle' 
+                            : estaEnCarrito(producto.id) 
+                                ? 'fa-check-circle' 
+                                : 'fa-cart-plus'
+                    } me-1`}></i>
+                    {!producto.disponible || producto.stock <= 0 
+                        ? 'No Disponible' 
+                        : estaEnCarrito(producto.id) 
+                            ? 'En el Carrito' 
+                            : 'Agregar al Carrito'
+                    }
                 </button>
             </div>
         </div>

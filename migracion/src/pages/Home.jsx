@@ -3,12 +3,19 @@ import { Link } from 'react-router-dom';
 import { getFeaturedProducts } from '../data/productos';
 import ProductCard from '../components/products/ProductCard';
 import Newsletter from '../components/common/Newsletter';
+import NotificationContainer from '../components/common/NotificationContainer';
+import { useNotifications } from '../hooks/useNotifications';
 
 const Home = () => {
     const productosDestacados = getFeaturedProducts();
+    const { notifications, removeNotification } = useNotifications();
 
     return (
         <>
+            <NotificationContainer 
+                notifications={notifications} 
+                onRemove={removeNotification} 
+            />
             <section className="hero-section">
                 <div className="container">
                     <div className="row align-items-center">

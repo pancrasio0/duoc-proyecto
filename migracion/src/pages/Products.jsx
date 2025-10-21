@@ -3,12 +3,15 @@ import { getAllProducts } from '../data/productos';
 import { getAllCategorias } from '../data/categorias';
 import ProductCard from '../components/products/ProductCard';
 import Newsletter from '../components/common/Newsletter';
+import NotificationContainer from '../components/common/NotificationContainer';
+import { useNotifications } from '../hooks/useNotifications';
 
 const Products = () => {
     const [productos, setProductos] = useState([]);
     const [productosFiltrados, setProductosFiltrados] = useState([]);
     const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('');
     const [ordenSeleccionado, setOrdenSeleccionado] = useState('nombre');
+    const { notifications, removeNotification } = useNotifications();
 
     useEffect(() => {
         const todosLosProductos = getAllProducts();
@@ -54,6 +57,10 @@ const Products = () => {
 
     return (
         <>
+            <NotificationContainer 
+                notifications={notifications} 
+                onRemove={removeNotification} 
+            />
             <section className="hero-section">
                 <div className="container">
                     <div className="row align-items-center">

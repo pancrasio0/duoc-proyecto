@@ -20,23 +20,41 @@ export const CartProvider = ({ children }) => {
     // Agregar producto al carrito
     const agregarAlCarrito = (productoId, cantidad = 1) => {
         const producto = productos[productoId];
-        if (!producto) return;
+        if (!producto) {
+            console.warn(`Producto con ID ${productoId} no encontrado`);
+            return;
+        }
+
+        if (!producto.disponible || producto.stock <= 0) {
+            console.warn(`Producto ${producto.nombre} no disponible`);
+            return;
+        }
 
         setCarrito(prevCarrito => {
             const itemExistente = prevCarrito.find(item => item.id === productoId);
             
             if (itemExistente) {
+                const nuevaCantidad = itemExistente.cantidad + cantidad;
+                if (nuevaCantidad > producto.stock) {
+                    console.warn(`No hay suficiente stock para ${producto.nombre}. Stock disponible: ${producto.stock}`);
+                    return prevCarrito;
+                }
                 return prevCarrito.map(item =>
                     item.id === productoId
-                        ? { ...item, cantidad: item.cantidad + cantidad }
+                        ? { ...item, cantidad: nuevaCantidad }
                         : item
                 );
             } else {
+                if (cantidad > producto.stock) {
+                    console.warn(`No hay suficiente stock para ${producto.nombre}. Stock disponible: ${producto.stock}`);
+                    return prevCarrito;
+                }
                 return [...prevCarrito, {
                     id: productoId,
                     nombre: producto.nombre,
                     precio: producto.precio,
                     imagen: producto.imagen,
+                    categoria: producto.categoria,
                     cantidad: cantidad
                 }];
             }
@@ -121,6 +139,21 @@ export const CartProvider = ({ children }) => {
         return carrito.some(item => item.id === productoId);
     };
 
+    // Limpiar productos inválidos del carrito
+    const limpiarProductosInvalidos = () => {
+        setCarrito(prevCarrito => {
+            return prevCarrito.filter(item => {
+                const producto = productos[item.id];
+                return producto && producto.disponible && producto.stock > 0;
+            });
+        });
+    };
+
+    // Efecto para limpiar productos inválidos al cargar el contexto
+    useEffect(() => {
+        limpiarProductosInvalidos();
+    }, []);
+
     const value = {
         carrito,
         codigoDescuento,
@@ -135,7 +168,8 @@ export const CartProvider = ({ children }) => {
         calcularDescuento,
         calcularTotal,
         obtenerCantidadTotal,
-        estaEnCarrito
+        estaEnCarrito,
+        limpiarProductosInvalidos
     };
 
     return (
